@@ -3,11 +3,13 @@ package com.qa.hotel.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.qa.hotel.data.entity.Room;
 import com.qa.hotel.data.repository.RoomRepository;
 import com.qa.hotel.exceptions.RoomNotFoundException;
 
+@Service
 public class RoomService {
 	
 
