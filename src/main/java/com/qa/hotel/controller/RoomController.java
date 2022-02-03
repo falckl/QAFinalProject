@@ -40,7 +40,7 @@ public class RoomController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Room> getRoomById(@PathVariable("id") long id) {
+	public ResponseEntity<Room> getRoomById(@PathVariable("id") Long id) {
 		Room roomInDb = roomService.getById(id);
 		ResponseEntity<Room> response = ResponseEntity.ok(roomInDb);
 		return response;
@@ -58,7 +58,7 @@ public class RoomController {
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Room> updateRoom(@PathVariable("id") long id, @Valid @RequestBody Room room) {
+	public ResponseEntity<Room> updateRoom(@PathVariable("id") Long id, @Valid @RequestBody Room room) {
 		Room updatedRoom = roomService.updateRoom(id,  room);
 		
 		HttpHeaders headers = new HttpHeaders();
@@ -70,7 +70,7 @@ public class RoomController {
 	}
 	
 	@DeleteMapping("/{id}")
-	public ResponseEntity<?> deleteRoom(@PathVariable("id") long id) {
+	public ResponseEntity<?> deleteRoom(@PathVariable("id") Long id) {
 		Room roomToDelete = roomService.getById(id);
 		Room deletedRoom = new Room();
 		deletedRoom.setName(roomToDelete.getName());
@@ -82,7 +82,6 @@ public class RoomController {
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Location", "/room/" + String.valueOf(deletedRoom.getId()));
 		ResponseEntity<Room> response = new ResponseEntity<Room>(deletedRoom, headers, HttpStatus.ACCEPTED);
-		//return ResponseEntity.accepted().build();
 		return response;
 	}
 	
