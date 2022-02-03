@@ -118,7 +118,7 @@ public class Room {
 		if (getClass() != obj.getClass())
 			return false;
 		Room other = (Room) obj;
-		return Objects.equals(id, other.id) && Objects.equals(name, other.name)
+		return Objects.equals(name, other.name)
 				&& Objects.equals(numBeds, other.numBeds) && Objects.equals(numGuests, other.numGuests)
 				&& Objects.equals(bathroom, other.bathroom);
 	}
