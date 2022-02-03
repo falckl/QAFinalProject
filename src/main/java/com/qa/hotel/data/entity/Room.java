@@ -105,6 +105,11 @@ public class Room {
 	}
 	
 	@Override
+	public int hashCode() {
+		return Objects.hash(name, numBeds, numGuests, bathroom);
+	}
+	
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
