@@ -26,12 +26,10 @@ public class RoomService {
 	//Get all
 	public List<Room> getAll() {
 		return roomRepository.findAll();
-		//List<Room> rooms = new ArrayList<>(List.of(new Room("double room", 1, 2, "ensuite")));
-		//return rooms;
 	}
 	
 	//Get by Id
-	public Room getById(long id) {
+	public Room getById(Long id) {
 		if (roomRepository.existsById(id)) {
 			Room room = roomRepository.findById(id).get();
 			return room;
@@ -45,7 +43,7 @@ public class RoomService {
 	}
 	
 	//Update
-	public Room updateRoom(long id, Room room) {
+	public Room updateRoom(Long id, Room room) {
 		if (roomRepository.existsById(id)) {
 			
 			Room roomToUpdate = roomRepository.getById(id);
@@ -61,7 +59,7 @@ public class RoomService {
 	}
 	
 	//Delete
-	public Room deleteRoom(long id) {
+	public Room deleteRoom(Long id) {
 		if (roomRepository.existsById(id)) {
 			Room deletedRoom = roomRepository.getById(id);
 			roomRepository.deleteById(id);

@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Profile;
 import com.qa.hotel.data.entity.Room;
 import com.qa.hotel.data.repository.RoomRepository;
 
-@Profile("dev")
+@Profile("production")
 @Configuration
 public class ApplicationStartupListener implements ApplicationListener<ApplicationReadyEvent> {
 	

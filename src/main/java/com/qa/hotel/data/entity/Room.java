@@ -20,7 +20,7 @@ public class Room {
 	
 	@Id //primary key
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id = 0L;
 	
 	@NotNull
 	@Length(min = 1, message = "Please specify room type name.")
@@ -42,7 +42,7 @@ public class Room {
 		super();
 	}
 	
-	public Room(long id, String name, int numBeds, int numGuests, String bathroom) {
+	public Room(Long id, String name, int numBeds, int numGuests, String bathroom) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -63,7 +63,7 @@ public class Room {
 		return id;
 	}
 	
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	
