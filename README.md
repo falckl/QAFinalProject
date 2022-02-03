@@ -10,8 +10,8 @@
   <li>How did the challenge go? </li>
   <li>Possible improvements for future revisions of the project. </li>
   <li>Postman/API output samples </li>
-  <li>Screenshots of your database to prove that data is being persisted. </li>
-  <li>Screenshot of your test results, including coverage report. </li>
+  <li>Evidence of Database persistance</li>
+  <li>Evidence of Tests/Coverage Report</li>
 </ol>
 </details>
 
@@ -143,22 +143,18 @@ This is the code in the service class, which uses the repository method to delet
 
 This is the code in the controller class, which uses the method of the service class and gets the id from the path:
 
-![image](https://user-images.githubusercontent.com/94963094/152325293-6b860211-ad71-44c0-ba64-e8c992902eb5.png)
+![image](https://user-images.githubusercontent.com/94963094/152390865-9f66a046-7e7c-4991-a23b-4d6d372f3431.png)
 
 In Postman:
 
 ![image](https://user-images.githubusercontent.com/94963094/152330352-1426fa7f-c643-4651-9aa6-c20d1c102d68.png)
-
-This returns the values of the room that was deleted:
-
-![image](https://user-images.githubusercontent.com/94963094/152330498-7969391b-6405-412e-bb77-4ab3f55d89a1.png)
 
 And the getAll method shows that the room with id 4 is deleted:
 
 ![image](https://user-images.githubusercontent.com/94963094/152330658-e6f81a54-a0a2-4b6c-a18f-fcc652072831.png)
 
 
-<h3>&nbsp;&nbsp;&nbsp;&nbspScreenshots of your database to prove that data is being persisted. </h3>
+<h3>Evidence of Database Persistence </h3>
 
 When starting up the app, the associated database shows a table of the rooms as expected:
 
@@ -170,8 +166,17 @@ When creating a new room, this can also be seen in MySQL as shown below:
 
 (The id for this room is 5 as the previously created room with id 4 has been deleted, and id's are generated automatically with auto-incrementation)
 
-<h3><ins>Screenshot of your test results, including coverage report.</ins></h3>
+<h3><ins>Evidence of Tests/Coverage Report</ins></h3>
 
+An overall test coverage report shows a coverage of 95.1% in the main java file:
+
+![image](https://user-images.githubusercontent.com/94963094/152389417-ecc3bc29-49c8-44bc-bc49-ed315293324e.png)
+
+...with 20 out of 20 tests past with Junit:
+
+![image](https://user-images.githubusercontent.com/94963094/152393332-03366865-8a3a-44fd-b0c6-5765872e0338.png)
+
+Service Layer tests include Unit testing and Integration testing, where the unit testing uses Mockito to create a mock environment with mock beans to test the methods. Controller layer testing includes a Web integration test.
 
 <h3><ins>Link to Jira board</ins></h3>
 
