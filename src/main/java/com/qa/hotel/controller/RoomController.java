@@ -71,18 +71,8 @@ public class RoomController {
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> deleteRoom(@PathVariable("id") Long id) {
-		Room roomToDelete = roomService.getById(id);
-		Room deletedRoom = new Room();
-		deletedRoom.setName(roomToDelete.getName());
-		deletedRoom.setNumBeds(roomToDelete.getNumBeds());
-		deletedRoom.setNumGuests(roomToDelete.getNumGuests());
-		deletedRoom.setBathroom(roomToDelete.getBathroom());
-		
 		roomService.deleteRoom(id);
-		HttpHeaders headers = new HttpHeaders();
-		headers.add("Location", "/room/" + String.valueOf(deletedRoom.getId()));
-		ResponseEntity<Room> response = new ResponseEntity<Room>(deletedRoom, headers, HttpStatus.ACCEPTED);
-		return response;
+		return ResponseEntity.accepted().build();
 	}
 	
 
