@@ -20,7 +20,7 @@ public class Room {
 	
 	@Id //primary key
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id = 0L;
 	
 	@NotNull
 	@Length(min = 1, message = "Please specify room type name.")
@@ -42,7 +42,7 @@ public class Room {
 		super();
 	}
 	
-	public Room(long id, String name, int numBeds, int numGuests, String bathroom) {
+	public Room(Long id, String name, int numBeds, int numGuests, String bathroom) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -63,7 +63,7 @@ public class Room {
 		return id;
 	}
 	
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	
@@ -105,6 +105,11 @@ public class Room {
 	}
 	
 	@Override
+	public int hashCode() {
+		return Objects.hash(name, numBeds, numGuests, bathroom);
+	}
+	
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -113,7 +118,7 @@ public class Room {
 		if (getClass() != obj.getClass())
 			return false;
 		Room other = (Room) obj;
-		return Objects.equals(id, other.id) && Objects.equals(name, other.name)
+		return Objects.equals(name, other.name)
 				&& Objects.equals(numBeds, other.numBeds) && Objects.equals(numGuests, other.numGuests)
 				&& Objects.equals(bathroom, other.bathroom);
 	}
