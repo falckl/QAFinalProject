@@ -1,10 +1,9 @@
 # QA Final Project - Hotel Room Database System
 
-<div id="start"></div>
-
 <details>
 <summary>Table of contents</summary>
 <ol>
+  <li>Getting started with this project</li>
   <li>Why are we doing this? </li>
   <li>My expectations of the challenge </li>
   <li>How did the challenge go? </li>
@@ -23,6 +22,19 @@
   <li>Junit</li>
   <li>MySQL</li>
 </ul>
+
+<h3><ins>Getting started with this project</ins></h3>
+
+Get a local copy of this project up and running by following the steps below:
+<ol>
+  <li>Make sure you have JDK 11 and MySQL installed</li>
+  <li>Open your terminal/console/command line in the folder/location where you want this project.</li>
+  <li>Clone this repo by copying the following code: "git clone https://github.com/falckl/QAFinalProject.git"</li>
+  <li>Change directory into the project folder</li>
+  <li>On application.properties, make sure this is set to "= dev" for testing purposes, or to "= production" to make data persist in the database</li>
+  <li>On application-production.properties, make sure to replace the username and password with your own for MySQL, and verify that the schema name matches up.</li>
+  <li>Run the following command to start the project: "java -jar hotel-app-0.0.1-SNAPSHOT.jar"</li>
+</ol>
 
 <h3><ins>Why are we doing this?</ins></h3>
 To conclude the DFE Software Development Bootcamp with QA, we are tasked with a final project - which is creating a Spring Boot API with full CRUD functionality (methods for creating, reading, updating, and deleting entities). This should have a sensible back-end package structure and adhere to best practices. Reasonable test-coverage for unit and integration testing should be included, as well as relevant documentation such as a risk assessment. I chose to build a Hotel Room Database System, which can store a specified room with the given features. 
