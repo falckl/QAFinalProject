@@ -33,6 +33,7 @@ Get a local copy of this project up and running by following the steps below:
   <li>Change directory into the project folder</li>
   <li>On application.properties, make sure this is set to "= dev" for testing purposes, or to "= production" to make data persist in the database</li>
   <li>On application-production.properties, make sure to replace the username and password with your own for MySQL, and verify that the schema name matches up.</li>
+  <li>Change directory into the target folder (where the .jar file is located)</li>
   <li>Run the following command to start the project: "java -jar hotel-app-0.0.1-SNAPSHOT.jar"</li>
 </ol>
 
