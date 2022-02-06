@@ -35,7 +35,10 @@ Get a local copy of this project up and running by following the steps below:
    ```
 4. Change directory into the project folder
 5. On application.properties, make sure this is set to "= dev" for testing purposes, or to "= production" to make data persist in the database
-6. On application-production.properties, make sure to replace the username and password with your own for MySQL, and verify that the schema name matches up.
+6. On application-production.properties, make sure to replace the username and password with your own for MySQL, and verify that the schema name matches up (my schema is called hotel_manager).
+    
+    <img width="465" alt="image" src="https://user-images.githubusercontent.com/94963094/152698537-aa18b75e-c30e-4b68-a15d-98c0c919ab17.png">
+
 7. Change directory into the target folder (where the .jar file is located)
 8. Run the following command to start the project: 
    ```sh
